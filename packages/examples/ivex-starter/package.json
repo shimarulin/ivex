@@ -14,16 +14,53 @@
     "url": "https://github.com/shimarulin/ivex/issues"
   },
   "scripts": {
-    "dev": "nuxt",
+    "serve": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index -g"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.vue": [
+        "eslint --fix",
+        "stylelint --fix",
+        "git add"
+      ],
+      "**/*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "**/*.{less,css}": [
+        "stylelint --fix",
+        "git add"
+      ],
+      "**/*.md": [
+        "prettier --parser markdown --prose-wrap always --write",
+        "git add"
+      ]
+    }
+  },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.3.4"
+    "nuxt": "^2.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "@nuxtjs/dotenv": "^1.3.0",
+    "@platr/eslint-config-vue": "^0.1.0",
+    "eslint": "^5.12.1",
+    "husky": "^1.3.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^8.1.1",
+    "prettier": "^1.16.2",
+    "stylelint": "^9.10.1",
+    "stylelint-config-rational-order": "^0.0.4",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-processor-html": "^1.0.0"
   }
 }

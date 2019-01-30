@@ -1,56 +1,55 @@
-const pkg = require('./package')
+import { config } from 'dotenv'
+import pkg from './package'
 
+config()
 
-module.exports = {
+export default {
   mode: 'spa',
 
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport', content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'description', name: 'description', content: pkg.description,
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      {
+        rel: 'icon', type: 'image/x-icon', href: '/favicon.ico',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Rubik:300,400,700&amp;subset=cyrillic,cyrillic-ext',
+      },
+    ],
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fff',
+  },
 
-  /*
-  ** Global CSS
-  */
   css: [
+    '@/assets/styles/common/index.less',
+    '@/assets/styles/theme/index.less',
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+  plugins: [],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
+    '@nuxtjs/dotenv',
   ],
 
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      
-    }
-  }
+    loaders: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
 }
