@@ -1,7 +1,7 @@
 {
   "name": "ivex",
   "version": "1.0.0",
-  "description": "Web application components and modules built on top of Vue.js, Nuxt.js and IView",
+  "description": "Web application components and modules built on top of Vue.js, Nuxt.js and iView",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
