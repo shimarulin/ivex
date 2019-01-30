@@ -21,7 +21,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/@ivex/*"
+    "packages/@ivex/*",
+    "packages/examples/*"
   ],
   "devDependencies": {
     "lerna": "^3.10.7"
