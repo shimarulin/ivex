@@ -1,0 +1,23 @@
+{
+  "name": "ivex",
+  "version": "0.1.0",
+  "description": "Web application components and modules built on top of Vue.js, Nuxt.js and IView",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/ivex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shimarulin/ivex/issues"
+  },
+  "homepage": "https://github.com/shimarulin/ivex#readme",
+  "keywords": [
+    "nuxt",
+    "vue"
+  ],
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
