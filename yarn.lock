@@ -10510,6 +10510,11 @@ vue@^2.5.22:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.22.tgz#3bf88041af08b8539c37b268b70ca79245e9cc30"
   integrity sha512-pxY3ZHlXNJMFQbkjEgGVMaMMkSV1ONpz+4qB55kZuJzyJOhn6MSy/YZdzhdnumegNzVTL/Dn3Pp4UrVBYt1j/g==
 
+vuescroll@^4.9.6:
+  version "4.9.6"
+  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.9.6.tgz#77c6738715ea14e00b5e003ec6d2e72560fa21b5"
+  integrity sha512-qQJjESaBW/4psBjsXhpaNdgAMOtY/Dc/u2DfwlLIWAF2ZMeFvF+vSg5UhTeZ4DJeyftWL+ridPCws93JlrcXqQ==
+
 vuex@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.0.tgz#634b81515cf0cfe976bd1ffe9601755e51f843b9"

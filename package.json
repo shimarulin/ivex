@@ -38,7 +38,7 @@
         "stylelint --fix",
         "git add"
       ],
-      "**/*.js": [
+      "**/*.js,!**/templates/**/*.js": [
         "eslint --fix",
         "git add"
       ],
