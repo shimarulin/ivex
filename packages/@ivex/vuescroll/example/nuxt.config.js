@@ -8,6 +8,18 @@ module.exports = {
     resourceHints: false,
   },
   modules: [
-    '@@',
+    [
+      '@@',
+      {
+        css: true,
+        config: {
+          ops: {
+            bar: {
+              background: '#0cc18f',
+            },
+          },
+        },
+      },
+    ],
   ],
 }

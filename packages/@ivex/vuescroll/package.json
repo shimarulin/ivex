@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "nuxt example",
     "lint": "eslint lib test",
-    "test": "yarn lint && jest",
+    "test": "yarn lint",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "bugs": {
@@ -39,6 +39,9 @@
     "testEnvironment": "node",
     "collectCoverage": true
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "vuescroll": "^4.9.6"
+  },
   "devDependencies": {}
 }
