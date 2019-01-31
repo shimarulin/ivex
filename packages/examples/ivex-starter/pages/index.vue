@@ -1,59 +1,61 @@
 <template>
   <div class="wrapper">
-    <section class="container">
-      <div>
-        <Logo/>
-        <h1 class="title">
-          ivex-starter
-        </h1>
-        <h2 class="subtitle">
-          iVex starter example
-        </h2>
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >
-            Documentation
-          </a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >
-            GitHub
-          </a>
+    <VueScroll>
+      <section class="container">
+        <div>
+          <Logo/>
+          <h1 class="title">
+            ivex-starter
+          </h1>
+          <h2 class="subtitle">
+            iVex starter example
+          </h2>
+          <div class="links">
+            <a
+              href="https://nuxtjs.org/"
+              target="_blank"
+              class="button--green"
+            >
+              Documentation
+            </a>
+            <a
+              href="https://github.com/nuxt/nuxt.js"
+              target="_blank"
+              class="button--grey"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="container">
-      <div>
-        <Logo/>
-        <h1 class="title">
-          ivex-starter
-        </h1>
-        <h2 class="subtitle">
-          iVex starter example
-        </h2>
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >
-            Documentation
-          </a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >
-            GitHub
-          </a>
+      </section>
+      <section class="container">
+        <div>
+          <Logo/>
+          <h1 class="title">
+            ivex-starter
+          </h1>
+          <h2 class="subtitle">
+            iVex starter example
+          </h2>
+          <div class="links">
+            <a
+              href="https://nuxtjs.org/"
+              target="_blank"
+              class="button--green"
+            >
+              Documentation
+            </a>
+            <a
+              href="https://github.com/nuxt/nuxt.js"
+              target="_blank"
+              class="button--grey"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </VueScroll>
   </div>
 </template>
 

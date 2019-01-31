@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "@ivex/vuescroll": "^0.1.0",
     "nuxt": "^2.4.0"
   },
   "devDependencies": {
