@@ -21,7 +21,7 @@ async function nuxtModule (moduleOptions) {
   const options = merge(defaultOptions, this.options['@ivex/vuescroll'], moduleOptions)
 
   this.addPlugin({
-    src: resolve(__dirname, 'templates/plugin.js'),
+    src: resolve(__dirname, 'templates/plugin.tpl.js'),
     fileName: 'ivex-vuescroll.js',
     options,
   })
