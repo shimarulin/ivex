@@ -22,12 +22,12 @@
   },
   "scripts": {
     "dev": "nuxt example",
-    "lint": "eslint lib test",
+    "lint": "eslint --ext .js,.vue .",
     "release": "standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint"
   },
   "eslintIgnore": [
-    "lib/plugin.js"
+    "lib/templates"
   ],
   "files": [
     "lib"
