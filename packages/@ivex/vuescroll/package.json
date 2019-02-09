@@ -1,0 +1,47 @@
+{
+  "name": "@ivex/vuescroll",
+  "version": "0.0.0",
+  "description": "Vuescroll.js Nuxt module for iVex",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/ivex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shimarulin/ivex/issues"
+  },
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/vuescroll#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "main": "lib/module.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "nuxt example",
+    "lint": "eslint lib test",
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint"
+  },
+  "eslintIgnore": [
+    "lib/plugin.js"
+  ],
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "nuxt"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "vuescroll": "^4.9.6"
+  },
+  "devDependencies": {}
+}
