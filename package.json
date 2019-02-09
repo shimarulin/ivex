@@ -15,7 +15,7 @@
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "scripts": {
     "lint": "lerna run lint --parallel --",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lerna run test"
   },
   "lint-staged": {
     "ignore": [
