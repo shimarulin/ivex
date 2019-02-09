@@ -2,8 +2,6 @@
   "name": "ivex",
   "version": "1.0.0",
   "description": "Web application components and modules built on top of Vue.js, Nuxt.js and iView",
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "homepage": "https://github.com/shimarulin/ivex#readme",
   "license": "MIT",
   "private": true,
   "repository": {
@@ -13,6 +11,43 @@
   "bugs": {
     "url": "https://github.com/shimarulin/ivex/issues"
   },
+  "homepage": "https://github.com/shimarulin/ivex#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "scripts": {
+    "lint": "lerna run lint --parallel --",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.js,!**/templates/**/*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "**/*.md": [
+        "prettier --parser markdown --prose-wrap always --write",
+        "git add"
+      ],
+      "**/*.vue": [
+        "eslint --fix",
+        "stylelint --fix",
+        "git add"
+      ],
+      "**/*.{less,css}": [
+        "stylelint --fix",
+        "git add"
+      ],
+      "**/package.json": [
+        "format-package --write",
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index -g",
+      "pre-commit": "lint-staged"
+    }
+  },
   "keywords": [
     "nuxt",
     "vue"
@@ -21,40 +56,10 @@
     "packages/@ivex/*",
     "packages/examples/*"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "lerna run lint --parallel --"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index -g"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "**/*.vue": [
-        "eslint --fix",
-        "stylelint --fix",
-        "git add"
-      ],
-      "**/*.js,!**/templates/**/*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "**/*.{less,css}": [
-        "stylelint --fix",
-        "git add"
-      ],
-      "**/*.md": [
-        "prettier --parser markdown --prose-wrap always --write",
-        "git add"
-      ]
-    }
-  },
   "devDependencies": {
     "@platr/eslint-config-vue": "^0.1.0",
     "eslint": "^5.12.1",
+    "format-package": "^4.5.0",
     "husky": "^1.3.1",
     "lerna": "^3.10.7",
     "lint-staged": "^8.1.1",
