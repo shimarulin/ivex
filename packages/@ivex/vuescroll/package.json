@@ -1,6 +1,6 @@
 {
   "name": "@ivex/vuescroll",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Vuescroll.js Nuxt module for iVex",
   "license": "MIT",
   "repository": {
@@ -42,6 +42,5 @@
   "dependencies": {
     "lodash": "^4.17.11",
     "vuescroll": "^4.9.6"
-  },
-  "devDependencies": {}
+  }
 }
