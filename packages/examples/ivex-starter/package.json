@@ -1,9 +1,7 @@
 {
   "name": "ivex-starter",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "iVex starter example",
-  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
-  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/examples/ivex-starter#readme",
   "license": "MIT",
   "private": true,
   "repository": {
@@ -13,37 +11,39 @@
   "bugs": {
     "url": "https://github.com/shimarulin/ivex/issues"
   },
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/examples/ivex-starter#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "scripts": {
-    "serve": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index -g"
-    }
+    "generate": "nuxt generate",
+    "serve": "nuxt",
+    "start": "nuxt start"
   },
   "lint-staged": {
     "linters": {
-      "**/*.vue": [
-        "eslint --fix",
-        "stylelint --fix",
-        "git add"
-      ],
       "**/*.js": [
         "eslint --fix",
-        "git add"
-      ],
-      "**/*.{less,css}": [
-        "stylelint --fix",
         "git add"
       ],
       "**/*.md": [
         "prettier --parser markdown --prose-wrap always --write",
         "git add"
+      ],
+      "**/*.vue": [
+        "eslint --fix",
+        "stylelint --fix",
+        "git add"
+      ],
+      "**/*.{less,css}": [
+        "stylelint --fix",
+        "git add"
       ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index -g",
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
