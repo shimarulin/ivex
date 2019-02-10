@@ -1,0 +1,35 @@
+{
+  "name": "@ivex/eslint-config-vue",
+  "version": "0.1.1",
+  "description": "ESLint Vue config for iVex",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/ivex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shimarulin/ivex/issues"
+  },
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/eslint-config-vue#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "main": "lib/eslint-config-vue.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js ."
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "eslint",
+    "vue"
+  ],
+  "dependencies": {
+    "@platr/eslint-config-vue": "^0.1.2"
+  }
+}
