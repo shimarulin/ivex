@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/shimarulin/ivex/compare/v0.1.0...v0.1.1) (2019-02-10)
+
+
+### Bug Fixes
+
+* rename scroll-area module to nuxt-scroll-area ([6a17555](https://github.com/shimarulin/ivex/commit/6a17555))
+* rename vuescroll module to scroll-area ([22a5d61](https://github.com/shimarulin/ivex/commit/22a5d61))
+
+
+
+
+
 # 0.1.0 (2019-02-09)
 
 
