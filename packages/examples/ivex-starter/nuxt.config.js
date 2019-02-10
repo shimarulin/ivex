@@ -43,7 +43,7 @@ export default {
 
   modules: [
     '@nuxtjs/dotenv',
-    '@ivex/vuescroll',
+    '@ivex/nuxt-scroll-area',
   ],
 
   build: {

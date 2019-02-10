@@ -15,14 +15,14 @@ async function nuxtModule (moduleOptions) {
           },
         },
       },
-      name: 'VueScroll',
+      name: 'ScrollArea',
     },
   }
-  const options = merge(defaultOptions, this.options['@ivex/vuescroll'], moduleOptions)
+  const options = merge(defaultOptions, this.options['@ivex/nuxt-scroll-area'], moduleOptions)
 
   this.addPlugin({
     src: resolve(__dirname, 'templates/plugin.tpl.js'),
-    fileName: 'ivex-vuescroll.js',
+    fileName: './@ivex/nuxt-scroll-area.js',
     options,
   })
 }
