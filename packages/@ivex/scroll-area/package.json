@@ -1,5 +1,5 @@
 {
-  "name": "@ivex/vuescroll",
+  "name": "@ivex/scroll-area",
   "version": "0.1.0",
   "description": "Vuescroll.js Nuxt module for iVex",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/shimarulin/ivex/issues"
   },
-  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/vuescroll#readme",
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/scroll-area#readme",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "main": "lib/module.js",
   "directories": {
@@ -22,8 +22,7 @@
   },
   "scripts": {
     "dev": "nuxt example",
-    "lint": "eslint --ext .js,.vue .",
-    "release": "standard-version && git push --follow-tags && npm publish",
+    "lint": "eslint --ext .js .",
     "test": "yarn lint"
   },
   "eslintIgnore": [

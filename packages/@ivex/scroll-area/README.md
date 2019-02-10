@@ -1,31 +1,68 @@
-# @ivex/vuescroll
+# @ivex/scroll-area
 
 [![npm version][npm-version-src]][npm-version-href]
 
-> Vuescroll.js Nuxt module for iVex
+> Scroll Area Nuxt module for iVex
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
 ## Setup
 
-- Add `@ivex/vuescroll` dependency using yarn or npm to your project
-- Add `@ivex/vuescroll` to `modules` section of `nuxt.config.js`
+- Add `@ivex/scroll-area` dependency using yarn or npm to your project
+- Add `@ivex/scroll-area` to `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
     // Simple usage
-    '@ivex/vuescroll',
+    '@ivex/scroll-area',
 
     // With options
     [
-      '@ivex/vuescroll',
+      '@ivex/scroll-area',
       {
         /* module options */
       },
     ],
   ]
 }
+```
+
+## Usage
+
+```vue
+<template>
+  <div>
+    <div class="container">
+      <ScrollArea>
+        <div class="long-content">
+          Works!
+          <div v-for="n in 100" :key="n">
+            {{ n }}
+          </div>
+        </div>
+      </ScrollArea>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+</style>
 ```
 
 ## Development
@@ -50,7 +87,7 @@ Copyright (c) Vyacheslav Shimarulin
 [circle-ci-href]: https://circleci.com/gh/shimarulin/ivex
 [codecov-src]: https://img.shields.io/codecov/c/github/shimarulin/ivex.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/shimarulin/ivex
-[npm-version-src]: https://img.shields.io/npm/dt/@ivex/vuescroll.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@ivex/vuescroll
-[npm-downloads-src]: https://img.shields.io/npm/v/@ivex/vuescroll/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@ivex/vuescroll
+[npm-version-src]: https://img.shields.io/npm/dt/@ivex/scroll-area.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@ivex/scroll-area
+[npm-downloads-src]: https://img.shields.io/npm/v/@ivex/scroll-area/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@ivex/scroll-area

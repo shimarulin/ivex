@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <VueScroll>
+      <ScrollArea>
         <div class="long-content">
           Works!
           <div
@@ -11,7 +11,7 @@
             {{ n }}
           </div>
         </div>
-      </VueScroll>
+      </ScrollArea>
     </div>
   </div>
 </template>
