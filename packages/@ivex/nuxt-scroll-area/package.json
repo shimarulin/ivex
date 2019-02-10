@@ -1,5 +1,5 @@
 {
-  "name": "@ivex/scroll-area",
+  "name": "@ivex/nuxt-scroll-area",
   "version": "0.1.0",
   "description": "Vuescroll.js Nuxt module for iVex",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/shimarulin/ivex/issues"
   },
-  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/scroll-area#readme",
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/nuxt-scroll-area#readme",
   "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
   "main": "lib/module.js",
   "directories": {

@@ -1,4 +1,4 @@
-# @ivex/scroll-area
+# @ivex/nuxt-scroll-area
 
 [![npm version][npm-version-src]][npm-version-href]
 
@@ -8,18 +8,18 @@
 
 ## Setup
 
-- Add `@ivex/scroll-area` dependency using yarn or npm to your project
-- Add `@ivex/scroll-area` to `modules` section of `nuxt.config.js`
+- Add `@ivex/nuxt-scroll-area` dependency using yarn or npm to your project
+- Add `@ivex/nuxt-scroll-area` to `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
     // Simple usage
-    '@ivex/scroll-area',
+    '@ivex/nuxt-scroll-area',
 
     // With options
     [
-      '@ivex/scroll-area',
+      '@ivex/nuxt-scroll-area',
       {
         /* module options */
       },
@@ -87,7 +87,7 @@ Copyright (c) Vyacheslav Shimarulin
 [circle-ci-href]: https://circleci.com/gh/shimarulin/ivex
 [codecov-src]: https://img.shields.io/codecov/c/github/shimarulin/ivex.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/shimarulin/ivex
-[npm-version-src]: https://img.shields.io/npm/dt/@ivex/scroll-area.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@ivex/scroll-area
-[npm-downloads-src]: https://img.shields.io/npm/v/@ivex/scroll-area/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@ivex/scroll-area
+[npm-version-src]: https://img.shields.io/npm/dt/@ivex/nuxt-scroll-area.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@ivex/nuxt-scroll-area
+[npm-downloads-src]: https://img.shields.io/npm/v/@ivex/nuxt-scroll-area/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@ivex/nuxt-scroll-area
