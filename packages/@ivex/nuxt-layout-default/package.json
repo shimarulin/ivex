@@ -1,0 +1,49 @@
+{
+  "name": "@ivex/nuxt-layout-default",
+  "version": "0.2.0",
+  "description": "iVex default layout",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/ivex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shimarulin/ivex/issues"
+  },
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/nuxt-layout-default#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "main": "lib/module.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "nuxt example",
+    "lint": "eslint --ext .js .",
+    "test": "yarn lint"
+  },
+  "eslintIgnore": [
+    "lib/templates"
+  ],
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "nuxt"
+  ],
+  "dependencies": {
+    "@ivex/nuxt-scroll-area": "^0.2.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "iview": "^3.2.2",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0"
+  }
+}
