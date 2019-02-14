@@ -5,7 +5,21 @@
 </template>
 
 <script>
-export default {}
+import { mapMutations } from 'vuex'
+import { LAYOUT_VUEX_MODULE } from '../constants'
+
+const { FIELDS: { HEADER }, MUTATIONS: { SET_HEADER_MODE } } = LAYOUT_VUEX_MODULE
+export default {
+  name: 'InnerPageStatic',
+  mounted: function () {
+    this[SET_HEADER_MODE](HEADER.MODE.STATIC)
+  },
+  methods: {
+    ...mapMutations(LAYOUT_VUEX_MODULE.NAME, [
+      SET_HEADER_MODE,
+    ]),
+  },
+}
 </script>
 
 <style scoped>

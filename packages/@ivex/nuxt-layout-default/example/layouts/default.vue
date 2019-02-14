@@ -1,7 +1,7 @@
 <template>
   <Layout class="layout-default">
     <Header
-      class="layout-default__navigation-bar"
+      :class="headerClassNames"
     >
       <AppBar/>
     </Header>
@@ -35,6 +35,8 @@ import { mapState, mapMutations } from 'vuex'
 import { LAYOUT_VUEX_MODULE } from '@/constants'
 
 const { FIELDS: { SCROLLABLE_CONTAINER }, MUTATIONS: { SET_SCROLL_PARAMS } } = LAYOUT_VUEX_MODULE
+const classNamePrefix = 'layout-default'
+
 // const getScrollIntervalValue = (scrollTop) => {
 //   const startPoint = 150
 //   const endPoint = 450
@@ -49,25 +51,25 @@ const { FIELDS: { SCROLLABLE_CONTAINER }, MUTATIONS: { SET_SCROLL_PARAMS } } = L
 
 export default {
   name: 'LayoutDefault',
-  data () {
-    return {
-      theme: 'light',
-    }
-  },
   computed: {
     ...mapState(LAYOUT_VUEX_MODULE.NAME, [
-      'directionY',
-      'process',
-      'scrollTop',
-      'mode',
+      // 'directionY',
+      // 'process',
+      // 'scrollTop',
+      // 'mode',
       'scrollableContainer',
+      'header',
     ]),
-    // headerClassNames () {
-    //   const prefix = 'layout-default__navigation-bar'
-    //   return {
-    //     [`${prefix}_fixed`]: this.mode === MODE.FIXED,
-    //   }
-    // },
+    headerClassNames () {
+      const classNameElement = `${classNamePrefix}__header`
+      const classNameModifierList = this.header.modifierList
+        .map((modifier) => `${classNameElement}_${modifier}`)
+
+      return [
+        classNameElement,
+        ...classNameModifierList,
+      ]
+    },
     // headerStyles () {
     //   const styles = {
     //     boxShadow: 'none',
@@ -138,7 +140,9 @@ export default {
 <style scoped lang="less">
   @import "../assets/styles/variables";
 
-  .layout-default {
+  @class-name-prefix: layout-default;
+
+  .@{class-name-prefix} {
     height: 100vh;
 
     &__main-container {

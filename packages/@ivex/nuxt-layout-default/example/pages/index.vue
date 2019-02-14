@@ -5,7 +5,22 @@
 </template>
 
 <script>
-export default {}
+import { mapMutations } from 'vuex'
+import { LAYOUT_VUEX_MODULE } from '../constants'
+
+const { FIELDS: { HEADER }, MUTATIONS: { ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS } } = LAYOUT_VUEX_MODULE
+export default {
+  name: 'MainPage',
+  beforeMount () {
+    this[ADD_HEADER_MODIFIERS](HEADER.MODIFIERS.FIXED)
+  },
+  methods: {
+    ...mapMutations(LAYOUT_VUEX_MODULE.NAME, [
+      ADD_HEADER_MODIFIERS,
+      REMOVE_HEADER_MODIFIERS,
+    ]),
+  },
+}
 </script>
 
 <style scoped>

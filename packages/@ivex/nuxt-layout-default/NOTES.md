@@ -1,5 +1,26 @@
 # Layout
 
+## TODO
+
+- [ ] keep page scroll
+
+## Keep scroll
+
+```js
+const state = {
+  pages: {
+    '/': {
+      scrollTop: 234,
+    },
+    '/inner': {
+      scrollTop: 586,
+    },
+  },
+}
+```
+
+## Mode
+
 Header:
 
 - mode: fixed | overlay | floated - fixed transparent header over page content
