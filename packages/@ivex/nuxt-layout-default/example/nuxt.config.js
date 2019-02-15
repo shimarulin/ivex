@@ -13,6 +13,10 @@ module.exports = {
   ],
   modules: [
     '@ivex/nuxt-scroll-area',
+    [
+      '@@',
+      {},
+    ],
   ],
   plugins: [
     '@/plugins/iview',

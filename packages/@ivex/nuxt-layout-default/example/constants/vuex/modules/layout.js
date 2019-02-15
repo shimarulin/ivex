@@ -16,10 +16,10 @@ export const LAYOUT_VUEX_MODULE = {
       SCROLL: {
         DIRECTIONAL: {
           UP: {},
-          BOTTOM: {}
+          BOTTOM: {},
         },
-        POSITIONAL: []
-      }
+        POSITIONAL: [],
+      },
       // MODE: {
       //   // With display: flex
       //   STATIC: 'static',

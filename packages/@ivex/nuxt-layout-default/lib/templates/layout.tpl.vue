@@ -139,12 +139,14 @@ export default {
 </script>
 
 <style lang="less">
-  @import "../assets/styles/variables";
+  /* @import "../assets/styles/variables"; */
 
   // z-index
-  @zindex-header : @zindex-modal - 10;
+  //@zindex-header : @zindex-modal - 10;
+  //@zindex-scrollbar : @zindex-modal - 1;
+  @zindex-header : 990;
 
-  @zindex-scrollbar : @zindex-modal - 1;
+  @zindex-scrollbar : 999;
 
   .layout-default .__vuescroll {
     .__view {
@@ -152,6 +154,10 @@ export default {
     }
 
     .__rail-is-vertical {
+      z-index: @zindex-scrollbar;
+    }
+
+    .__rail-is-horizontal {
       z-index: @zindex-scrollbar;
     }
   }
