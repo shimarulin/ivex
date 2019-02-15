@@ -126,7 +126,7 @@ export default {
          * */
       if (
         pageScrollKeys.includes(ev.key) &&
-          this.$refs[PAGE] !== document.activeElement
+        this.$refs[PAGE] !== document.activeElement
       ) {
         this.$refs[PAGE].focus()
       }
