@@ -138,10 +138,23 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
   @import "../assets/styles/variables";
+
   // z-index
   @zindex-header : @zindex-modal - 10;
+
+  @zindex-scrollbar : @zindex-modal - 1;
+
+  .layout-default .__vuescroll {
+    .__view {
+      display: flex;
+    }
+
+    .__rail-is-vertical {
+      z-index: @zindex-scrollbar;
+    }
+  }
 
   .layout-default {
     height: 100vh;
@@ -179,20 +192,4 @@ export default {
       }
     }
   }
-</style>
-
-<style lang="less">
-@import "../assets/styles/variables";
-
-@zindex-scrollbar : @zindex-modal - 1;
-
-.layout-default .__vuescroll {
-  .__view {
-    display: flex;
-  }
-
-  .__rail-is-vertical {
-    z-index: @zindex-scrollbar;
-  }
-}
 </style>
