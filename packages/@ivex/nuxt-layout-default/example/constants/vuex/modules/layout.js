@@ -29,12 +29,12 @@ export const LAYOUT_VUEX_MODULE = {
     //   // as fixed but like Medium, not implemented
     //   FLOATED: 'floated',
     // },
-    SCROLLABLE_CONTAINER: {
-      PAGE: 'page',
-      // SIDEBAR_LEFT: 'sidebar-left',
-      // SIDEBAR_RIGHT: 'sidebar-right',
-      // MODAL: 'modal',
-    },
+    // SCROLLABLE_CONTAINER: {
+    //   PAGE: 'page',
+    //   // SIDEBAR_LEFT: 'sidebar-left',
+    //   // SIDEBAR_RIGHT: 'sidebar-right',
+    //   // MODAL: 'modal',
+    // },
   },
 
   // Mutations

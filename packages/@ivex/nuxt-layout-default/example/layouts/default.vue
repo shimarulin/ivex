@@ -14,7 +14,7 @@
             class="layout-default__page-wrapper"
           >
             <div
-              :ref="refNames.page"
+              :ref="_page"
               class="layout-default__content-wrapper"
               tabindex="-1"
             >
@@ -34,8 +34,9 @@
 import { mapState, mapMutations } from 'vuex'
 import { LAYOUT_VUEX_MODULE } from '@/constants'
 
-const { FIELDS: { SCROLLABLE_CONTAINER }, MUTATIONS: { SET_SCROLL_PARAMS } } = LAYOUT_VUEX_MODULE
-const classNamePrefix = 'layout-default'
+const { MUTATIONS: { SET_SCROLL_PARAMS } } = LAYOUT_VUEX_MODULE
+const CLASS_NAME_PREFIX = 'layout-default'
+const PAGE = 'page'
 
 // const getScrollIntervalValue = (scrollTop) => {
 //   const startPoint = 150
@@ -57,11 +58,11 @@ export default {
       // 'process',
       // 'scrollTop',
       // 'mode',
-      'scrollableContainer',
+      // 'scrollableContainer',
       'header',
     ]),
     headerClassNames () {
-      const classNameElement = `${classNamePrefix}__header`
+      const classNameElement = `${CLASS_NAME_PREFIX}__header`
       const classNameModifierList = this.header.modifierList
         .map((modifier) => `${classNameElement}_${modifier}`)
 
@@ -94,16 +95,13 @@ export default {
     //     [`${prefix}_full-height`]: this.mode === MODE.FIXED,
     //   }
     // },
-    refNames () {
-      return {
-        page: SCROLLABLE_CONTAINER.PAGE,
-      }
-    },
+    _page () { return PAGE },
   },
   mounted: function () {
+    // console.log(this)
     window.addEventListener('keydown', this.handleKeydown)
     this.$nextTick(() => {
-      this.$refs[this.scrollableContainer].focus()
+      this.$refs[PAGE].focus()
     })
   },
   beforeDestroy: function () {
@@ -128,9 +126,9 @@ export default {
          * */
       if (
         pageScrollKeys.includes(ev.key) &&
-          this.$refs[this.scrollableContainer] !== document.activeElement
+          this.$refs[PAGE] !== document.activeElement
       ) {
-        this.$refs[this.scrollableContainer].focus()
+        this.$refs[PAGE].focus()
       }
     },
   },
@@ -139,11 +137,21 @@ export default {
 
 <style scoped lang="less">
   @import "../assets/styles/variables";
+  // z-index
+  @zindex-header : @zindex-modal - 10;
 
-  @class-name-prefix: layout-default;
-
-  .@{class-name-prefix} {
+  .layout-default {
     height: 100vh;
+
+    &__header {
+      &_fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: @zindex-header;
+        width: 100%;
+      }
+    }
 
     &__main-container {
       flex-grow: 1;
@@ -170,8 +178,18 @@ export default {
   }
 </style>
 
-<style>
-  .layout-default .__vuescroll .__view {
+<style lang="less">
+@import "../assets/styles/variables";
+
+@zindex-scrollbar : @zindex-modal - 1;
+
+.layout-default .__vuescroll {
+  .__view {
     display: flex;
   }
+
+  .__rail-is-vertical {
+    z-index: @zindex-scrollbar;
+  }
+}
 </style>

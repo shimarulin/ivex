@@ -1,6 +1,6 @@
 import { LAYOUT_VUEX_MODULE } from '../constants'
 
-const { MUTATIONS: { SET_SCROLL_PARAMS, ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS, SET_SCROLLABLE_CONTAINER }, FIELDS } = LAYOUT_VUEX_MODULE
+const { MUTATIONS: { SET_SCROLL_PARAMS, ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS }, FIELDS } = LAYOUT_VUEX_MODULE
 
 // const updateSet = (upgradeableSet) => {
 //   const transform = (toUpgradeSet, action) => {
@@ -56,7 +56,6 @@ export const state = () => ({
   process: 0,
   scrollTop: 0,
   // mode: FIELDS.MODE.FIXED,
-  scrollableContainer: FIELDS.SCROLLABLE_CONTAINER.PAGE,
   header: {
     // Default values
     // mode: FIELDS.HEADER.MODE.STATIC,
@@ -100,7 +99,4 @@ export const mutations = {
   // [SET_MODE] (state, mode) {
   //   state.mode = mode
   // },
-  [SET_SCROLLABLE_CONTAINER] (state, scrollableContainer) {
-    state.scrollableContainer = scrollableContainer
-  },
 }
