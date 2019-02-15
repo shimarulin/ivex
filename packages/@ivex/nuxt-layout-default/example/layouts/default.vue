@@ -2,6 +2,7 @@
   <Layout class="layout-default">
     <Header
       :class="headerClassNames"
+      :style="header.styles"
     >
       <AppBar/>
     </Header>
@@ -63,8 +64,10 @@ export default {
     ]),
     headerClassNames () {
       const classNameElement = `${CLASS_NAME_PREFIX}__header`
-      const classNameModifierList = this.header.modifierList
+      const classNameModifierList = this.header.classModifierList
         .map((modifier) => `${classNameElement}_${modifier}`)
+
+      console.log(classNameModifierList)
 
       return [
         classNameElement,

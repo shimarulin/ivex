@@ -1,6 +1,6 @@
 import { LAYOUT_VUEX_MODULE } from '../constants'
 
-const { MUTATIONS: { SET_SCROLL_PARAMS, ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS }, FIELDS } = LAYOUT_VUEX_MODULE
+const { MUTATIONS: { SET_SCROLL_PARAMS, ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS, SET_HEADER_STYLES }, FIELDS } = LAYOUT_VUEX_MODULE
 
 // const updateSet = (upgradeableSet) => {
 //   const transform = (toUpgradeSet, action) => {
@@ -38,8 +38,8 @@ const { MUTATIONS: { SET_SCROLL_PARAMS, ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODI
 //
 // const createHeaderMutation = (action) => {
 //   return (state, modifierListOrName) => {
-//     state.header.modifierList = Array.from(
-//       updateSet(new Set(state.header.modifierList))[action](modifierListOrName),
+//     state.header.classModifierList = Array.from(
+//       updateSet(new Set(state.header.classModifierList))[action](modifierListOrName),
 //     )
 //   }
 // }
@@ -62,8 +62,9 @@ export const state = () => ({
     // transparent: false,
     // offScreen: false,
     // scrollOffScreenParams: null,
-    // modifierList: new Set(),
-    modifierList: [],
+    // classModifierList: new Set(),
+    classModifierList: [],
+    styles: {},
     handleScroll: null,
   },
 })
@@ -75,17 +76,21 @@ export const mutations = {
     state.scrollTop = scrollTop
   },
 
+  [SET_HEADER_STYLES] (state, styles) {
+    state.header.styles = styles
+  },
+
   [ADD_HEADER_MODIFIERS] (state, modifierListOrName) {
     const modifierList = createList(modifierListOrName)
-    state.header.modifierList = Array.from(new Set([
-      ...state.header.modifierList,
+    state.header.classModifierList = Array.from(new Set([
+      ...state.header.classModifierList,
       ...modifierList,
     ]))
   },
 
   [REMOVE_HEADER_MODIFIERS] (state, modifierListOrName) {
     const modifierList = createList(modifierListOrName)
-    state.header.modifierList = state.header.modifierList.filter((modifier) => {
+    state.header.classModifierList = state.header.classModifierList.filter((modifier) => {
       return !(modifierList.indexOf(modifier) !== -1)
     })
   },

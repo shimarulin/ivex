@@ -13,6 +13,13 @@ export const LAYOUT_VUEX_MODULE = {
         FIXED: 'fixed',
         TRANSPARENT: 'transparent',
       },
+      SCROLL: {
+        DIRECTIONAL: {
+          UP: {},
+          BOTTOM: {}
+        },
+        POSITIONAL: []
+      }
       // MODE: {
       //   // With display: flex
       //   STATIC: 'static',
@@ -40,6 +47,7 @@ export const LAYOUT_VUEX_MODULE = {
   // Mutations
   MUTATIONS: {
     SET_SCROLL_PARAMS: 'SET_SCROLL_PARAMS',
+    SET_HEADER_STYLES: 'SET_HEADER_STYLES',
     ADD_HEADER_MODIFIERS: 'ADD_HEADER_MODIFIERS',
     REMOVE_HEADER_MODIFIERS: 'REMOVE_HEADER_MODIFIERS',
     // ADD_HEADER_MODIFIERS: 'ADD_HEADER_MODIFIERS',
