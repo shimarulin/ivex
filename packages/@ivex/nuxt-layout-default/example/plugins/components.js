@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
-import AppBar from '../components/AppBar'
-import PageFooter from '../components/PageFooter'
+import AppHeader from '../components/AppHeader'
+import AppFooter from '../components/AppFooter'
 
-Vue.component(AppBar.name, AppBar)
-Vue.component(PageFooter.name, PageFooter)
+Vue.component(AppHeader.name, AppHeader)
+Vue.component(AppFooter.name, AppFooter)

@@ -1,28 +1,28 @@
 <template>
-  <Layout class="layout-default">
+  <Layout class="layout-<%= options.name %>">
     <Header
       :class="headerClassNames"
       :style="header.styles"
     >
-      <AppBar/>
+      <<%= options.components.AppHeader %>/>
     </Header>
-    <Layout class="layout-default__main-container">
-      <Content class="layout-default__content">
+    <Layout class="layout-<%= options.name %>__main-container">
+      <Content class="layout-<%= options.name %>__content">
         <ScrollArea
           @handle-scroll="SET_SCROLL_PARAMS"
         >
           <Layout
-            class="layout-default__page-wrapper"
+            class="layout-<%= options.name %>__page-wrapper"
           >
             <div
               :ref="_page"
-              class="layout-default__content-wrapper"
+              class="layout-<%= options.name %>__content-wrapper"
               tabindex="-1"
             >
               <Nuxt/>
             </div>
-            <Footer class="layout-default__footer">
-              2011-2016 &copy; TalkingData
+            <Footer class="layout-<%= options.name %>__footer">
+              <<%= options.components.AppFooter %>/>
             </Footer>
           </Layout>
         </ScrollArea>
@@ -33,33 +33,26 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { LAYOUT_VUEX_MODULE } from '@/constants'
 
-const { MUTATIONS: { SET_SCROLL_PARAMS } } = LAYOUT_VUEX_MODULE
-const CLASS_NAME_PREFIX = 'layout-default'
+const LAYOUT_VUEX_MODULE = <%= serialize(options.constants.LAYOUT_VUEX_MODULE) %>
+const {
+  MODULE_NAMESPACE,
+  MODULE_NAME,
+  MUTATIONS: {
+    SET_SCROLL_PARAMS
+  }
+} = LAYOUT_VUEX_MODULE
+const CLASS_NAME_PREFIX = 'layout-<%= options.name %>'
 const PAGE = 'page'
-
-// const getScrollIntervalValue = (scrollTop) => {
-//   const startPoint = 150
-//   const endPoint = 450
-//   if (scrollTop <= startPoint) {
-//     return 0
-//   } else if (scrollTop >= endPoint) {
-//     return 1
-//   } else {
-//     return (scrollTop - startPoint) / (endPoint - startPoint)
-//   }
-// }
+const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
 
 export default {
-  name: 'LayoutDefault',
+  name: 'Layout<%= _.capitalize(options.name) %>',
   computed: {
-    ...mapState(LAYOUT_VUEX_MODULE.NAME, [
+    ...mapState(`${MODULE}`, [
       // 'directionY',
       // 'process',
       // 'scrollTop',
-      // 'mode',
-      // 'scrollableContainer',
       'header',
     ]),
     headerClassNames () {
@@ -67,41 +60,14 @@ export default {
       const classNameModifierList = this.header.classModifierList
         .map((modifier) => `${classNameElement}_${modifier}`)
 
-      console.log(classNameModifierList)
-
       return [
         classNameElement,
         ...classNameModifierList,
       ]
     },
-    // headerStyles () {
-    //   const styles = {
-    //     boxShadow: 'none',
-    //     backgroundColor: 'transparent',
-    //   }
-    //   const getBoxShadow = (val) => `0 3px 12px rgba(0, 0, 0, ${0.1 * val})`
-    //   const getBackgroundColor = (val) => `rgba(255, 255, 255, ${1 * val})`
-    //
-    //   if (this.mode === MODE.FIXED) {
-    //     const scrollIntervalValue = getScrollIntervalValue(this.scrollTop)
-    //     styles.boxShadow = getBoxShadow(scrollIntervalValue)
-    //     styles.backgroundColor = getBackgroundColor(scrollIntervalValue)
-    //   } else {
-    //     styles.boxShadow = getBoxShadow(1)
-    //     styles.backgroundColor = getBackgroundColor(1)
-    //   }
-    //   return styles
-    // },
-    // pageWrapperClassNames () {
-    //   const prefix = 'layout-default__page-wrapper'
-    //   return {
-    //     [`${prefix}_full-height`]: this.mode === MODE.FIXED,
-    //   }
-    // },
     _page () { return PAGE },
   },
   mounted: function () {
-    // console.log(this)
     window.addEventListener('keydown', this.handleKeydown)
     this.$nextTick(() => {
       this.$refs[PAGE].focus()
@@ -111,7 +77,7 @@ export default {
     window.removeEventListener('keydown', this.handleKeydown)
   },
   methods: {
-    ...mapMutations(LAYOUT_VUEX_MODULE.NAME, [
+    ...mapMutations(`${MODULE}`, [
       SET_SCROLL_PARAMS,
     ]),
     handleKeydown (ev) {
@@ -148,7 +114,7 @@ export default {
 
   @zindex-scrollbar : 999;
 
-  .layout-default .__vuescroll {
+  .layout-<%= options.name %> .__vuescroll {
     .__view {
       display: flex;
     }
@@ -162,7 +128,7 @@ export default {
     }
   }
 
-  .layout-default {
+  .layout-<%= options.name %> {
     height: 100vh;
 
     &__header {

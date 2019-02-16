@@ -6,19 +6,21 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import { LAYOUT_VUEX_MODULE } from '../constants'
+import { LAYOUT_VUEX_MODULE } from '../../lib/constants'
 
-const { FIELDS: { HEADER }, MUTATIONS: { ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS } } = LAYOUT_VUEX_MODULE
+const { MODULE_NAMESPACE, MODULE_NAME, FIELDS: { HEADER }, MUTATIONS: { ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS } } = LAYOUT_VUEX_MODULE
+const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
+
 export default {
   name: 'MainPage',
   fetch ({ store }) {
-    store.commit(`${LAYOUT_VUEX_MODULE.NAME}/${ADD_HEADER_MODIFIERS}`, HEADER.MODIFIERS.FIXED)
+    store.commit(`${MODULE}/${ADD_HEADER_MODIFIERS}`, HEADER.MODIFIERS.FIXED)
   },
   beforeDestroy () {
     this[REMOVE_HEADER_MODIFIERS](HEADER.MODIFIERS.FIXED)
   },
   methods: {
-    ...mapMutations(LAYOUT_VUEX_MODULE.NAME, [
+    ...mapMutations(MODULE, [
       ADD_HEADER_MODIFIERS,
       REMOVE_HEADER_MODIFIERS,
     ]),
