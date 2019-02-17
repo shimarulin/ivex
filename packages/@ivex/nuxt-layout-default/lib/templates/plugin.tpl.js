@@ -4,6 +4,7 @@ const {
   MODULE_NAME,
   MUTATIONS: {
     SET_SCROLL_PARAMS,
+    SET_ROUTE_SCROLL_TOP,
     ADD_HEADER_MODIFIERS,
     REMOVE_HEADER_MODIFIERS,
     SET_HEADER_STYLES
@@ -19,6 +20,7 @@ const createList = (listOrName) => {
 }
 
 const state = () => ({
+  routeScrollTop: {},
   directionY: '',
   process: 0,
   scrollTop: 0,
@@ -34,6 +36,10 @@ const mutations = {
     state.directionY = process > state.process ? FIELDS.DIRECTION_Y.DOWN : FIELDS.DIRECTION_Y.UP
     state.process = process
     state.scrollTop = scrollTop
+  },
+
+  [SET_ROUTE_SCROLL_TOP] (state, { path, scrollTop }) {
+    state.routeScrollTop[path] = scrollTop
   },
 
   [SET_HEADER_STYLES] (state, styles) {

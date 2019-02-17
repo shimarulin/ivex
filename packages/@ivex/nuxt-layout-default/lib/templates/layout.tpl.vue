@@ -38,20 +38,21 @@ const LAYOUT_VUEX_MODULE = <%= serialize(options.constants.LAYOUT_VUEX_MODULE) %
 const {
   MODULE_NAMESPACE,
   MODULE_NAME,
-  MUTATIONS: { SET_SCROLL_PARAMS },
+  MUTATIONS: { SET_SCROLL_PARAMS, SET_ROUTE_SCROLL_TOP },
 } = LAYOUT_VUEX_MODULE
 const CLASS_NAME_PREFIX = 'layout-<%= options.name %>'
 const PAGE = 'page'
 const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
 
+let removeBeforeEach
+let removeAfterEach
+
 export default {
   name: 'Layout<%= _.capitalize(options.name) %>',
   computed: {
     ...mapState(`${MODULE}`, [
-      // 'directionY',
-      // 'process',
-      // 'scrollTop',
       'header',
+      'routeScrollTop'
     ]),
     headerClassNames () {
       const classNameElement = `${CLASS_NAME_PREFIX}__header`
@@ -67,17 +68,46 @@ export default {
   },
   mounted: function () {
     window.addEventListener('keydown', this.handleKeydown)
+    window.addEventListener('popstate', this.handlePopstate)
+
+    removeBeforeEach = this.$router.beforeEach((to, from, next) => {
+      const element = this.getScrollElement()
+      if (element !== null) {
+        this[SET_ROUTE_SCROLL_TOP]({
+          path: from.path,
+          scrollTop: element.scrollTop
+        })
+      }
+
+      next()
+    })
+
+    removeAfterEach = this.$router.afterEach(() => {
+      const element = this.getScrollElement()
+      if (element !== null) {
+        element.scrollTop = 0
+      }
+    })
+
     this.$nextTick(() => {
       this.$refs[PAGE].focus()
     })
   },
   beforeDestroy: function () {
     window.removeEventListener('keydown', this.handleKeydown)
+    window.removeEventListener('popstate', this.handlePopstate)
+
+    typeof removeBeforeEach === 'function' && removeBeforeEach()
+    typeof removeAfterEach === 'function' && removeAfterEach()
   },
   methods: {
     ...mapMutations(`${MODULE}`, [
       SET_SCROLL_PARAMS,
+      SET_ROUTE_SCROLL_TOP,
     ]),
+    getScrollElement () {
+      return document.querySelector(`.${CLASS_NAME_PREFIX}__content > .__vuescroll > .__panel`)
+    },
     handleKeydown (ev) {
       const pageScrollKeys = [
         'ArrowUp',
@@ -96,6 +126,12 @@ export default {
         this.$refs[PAGE] !== document.activeElement
       ) {
         this.$refs[PAGE].focus()
+      }
+    },
+    handlePopstate () {
+      const element = this.getScrollElement()
+      if (element !== null) {
+        element.scrollTop = this.routeScrollTop[this.$route.path]
       }
     },
   },
