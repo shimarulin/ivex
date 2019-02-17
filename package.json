@@ -30,7 +30,7 @@
         "prettier --parser markdown --prose-wrap always --write",
         "git add"
       ],
-      "**/*.vue": [
+      "**/*.vue,!**/templates/**/*.vue": [
         "eslint --fix",
         "stylelint --fix",
         "git add"
