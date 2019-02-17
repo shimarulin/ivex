@@ -12,13 +12,7 @@ export const LAYOUT_VUEX_MODULE = {
     HEADER: {
       MODIFIERS: {
         FIXED: 'fixed',
-      },
-      SCROLL: {
-        DIRECTIONAL: {
-          UP: {},
-          BOTTOM: {},
-        },
-        POSITIONAL: [],
+        OFF_SCREEN: 'off-screen',
       },
     },
   },

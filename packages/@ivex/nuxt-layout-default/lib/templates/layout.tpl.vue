@@ -130,12 +130,18 @@ export default {
     height: 100vh;
 
     &__header {
+      transition: transform 0.3s ease-in-out;
+
       &_fixed {
         position: fixed;
         top: 0;
         left: 0;
         z-index: @zindex-header;
         width: 100%;
+      }
+
+      &_off-screen {
+        transform: translateY(-100%);
       }
     }
 

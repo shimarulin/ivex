@@ -5,26 +5,26 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-import { LAYOUT_VUEX_MODULE } from '../../lib/constants'
-
-const { MODULE_NAMESPACE, MODULE_NAME, FIELDS: { HEADER }, MUTATIONS: { ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS } } = LAYOUT_VUEX_MODULE
-const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
+// import { mapMutations } from 'vuex'
+// import { LAYOUT_VUEX_MODULE } from '../../lib/constants'
+//
+// const { MODULE_NAMESPACE, MODULE_NAME, FIELDS: { HEADER }, MUTATIONS: { ADD_HEADER_MODIFIERS, REMOVE_HEADER_MODIFIERS } } = LAYOUT_VUEX_MODULE
+// const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
 
 export default {
   name: 'MainPage',
-  fetch ({ store }) {
-    store.commit(`${MODULE}/${ADD_HEADER_MODIFIERS}`, HEADER.MODIFIERS.FIXED)
-  },
-  beforeDestroy () {
-    this[REMOVE_HEADER_MODIFIERS](HEADER.MODIFIERS.FIXED)
-  },
-  methods: {
-    ...mapMutations(MODULE, [
-      ADD_HEADER_MODIFIERS,
-      REMOVE_HEADER_MODIFIERS,
-    ]),
-  },
+  // fetch ({ store }) {
+  //   store.commit(`${MODULE}/${ADD_HEADER_MODIFIERS}`, HEADER.MODIFIERS.FIXED)
+  // },
+  // beforeDestroy () {
+  //   this[REMOVE_HEADER_MODIFIERS](HEADER.MODIFIERS.FIXED)
+  // },
+  // methods: {
+  //   ...mapMutations(MODULE, [
+  //     ADD_HEADER_MODIFIERS,
+  //     REMOVE_HEADER_MODIFIERS,
+  //   ]),
+  // },
 }
 </script>
 
