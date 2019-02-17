@@ -1,6 +1,6 @@
 {
   "name": "@ivex/nuxt-layout-default",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "iVex default layout",
   "license": "MIT",
   "repository": {
@@ -38,7 +38,7 @@
     "nuxt"
   ],
   "dependencies": {
-    "@ivex/nuxt-scroll-area": "^0.2.0",
+    "@ivex/nuxt-scroll-area": "^0.3.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
