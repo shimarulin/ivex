@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/shimarulin/ivex/compare/v0.3.0...v0.3.1) (2019-02-17)
+
+
+### Bug Fixes
+
+* **layout:** replace register module callback to event bus pattern ([82250c0](https://github.com/shimarulin/ivex/commit/82250c0))
+
+
+
+
+
 # [0.3.0](https://github.com/shimarulin/ivex/compare/v0.2.0...v0.3.0) (2019-02-17)
 
 
