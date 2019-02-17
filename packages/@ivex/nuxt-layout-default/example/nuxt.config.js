@@ -15,7 +15,9 @@ module.exports = {
     '@ivex/nuxt-scroll-area',
     [
       '@@',
-      {},
+      {
+        name: 'default',
+      },
     ],
   ],
   plugins: [

@@ -1,28 +1,28 @@
 <template>
-  <Layout class="layout-<%= options.name %>">
+  <Layout class="layout-default">
     <Header
       :class="headerClassNames"
       :style="header.styles"
     >
-      <<%= options.components.AppHeader %>/>
+      <AppHeader/>
     </Header>
-    <Layout class="layout-<%= options.name %>__main-container">
-      <Content class="layout-<%= options.name %>__content">
+    <Layout class="layout-default__main-container">
+      <Content class="layout-default__content">
         <ScrollArea
           @handle-scroll="SET_SCROLL_PARAMS"
         >
           <Layout
-            class="layout-<%= options.name %>__page-wrapper"
+            class="layout-default__page-wrapper"
           >
             <div
               :ref="_page"
-              class="layout-<%= options.name %>__content-wrapper"
+              class="layout-default__content-wrapper"
               tabindex="-1"
             >
               <Nuxt/>
             </div>
-            <Footer class="layout-<%= options.name %>__footer">
-              <<%= options.components.AppFooter %>/>
+            <Footer class="layout-default__footer">
+              <AppFooter/>
             </Footer>
           </Layout>
         </ScrollArea>
@@ -34,26 +34,58 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 
-const LAYOUT_VUEX_MODULE = <%= serialize(options.constants.LAYOUT_VUEX_MODULE) %>
+const LAYOUT_VUEX_MODULE = {
+  'MODULE_NAMESPACE': '@ivex',
+  'MODULE_NAME': 'layout',
+  'FIELDS': {
+    'DIRECTION_Y': {
+      'UP': 'up', 'DOWN': 'down',
+    },
+    'HEADER': {
+      'MODIFIERS': {
+        'FIXED': 'fixed',
+      },
+      'SCROLL': {
+        'DIRECTIONAL': {
+          'UP': {}, 'BOTTOM': {},
+        },
+        'POSITIONAL': [],
+      },
+    },
+  },
+  'MUTATIONS': {
+    'SET_SCROLL_PARAMS': 'SET_SCROLL_PARAMS', 'SET_HEADER_STYLES': 'SET_HEADER_STYLES', 'ADD_HEADER_MODIFIERS': 'ADD_HEADER_MODIFIERS', 'REMOVE_HEADER_MODIFIERS': 'REMOVE_HEADER_MODIFIERS',
+  },
+}
 const {
   MODULE_NAMESPACE,
   MODULE_NAME,
   MUTATIONS: { SET_SCROLL_PARAMS },
 } = LAYOUT_VUEX_MODULE
-const CLASS_NAME_PREFIX = 'layout-<%= options.name %>'
+const CLASS_NAME_PREFIX = 'layout-default'
 const PAGE = 'page'
 const MODULE = `${MODULE_NAMESPACE}/${MODULE_NAME}`
 
 export default {
-  name: 'Layout<%= _.capitalize(options.name) %>',
+  name: 'LayoutDefault',
   computed: {
     ...mapState(`${MODULE}`, [
-      // 'directionY',
-      // 'process',
-      // 'scrollTop',
+      'directionY',
+      'process',
+      'scrollTop',
       'header',
     ]),
     headerClassNames () {
+      const classNameElement = `${CLASS_NAME_PREFIX}__header`
+      const classNameModifierList = this.header.classModifierList
+        .map((modifier) => `${classNameElement}_${modifier}`)
+
+      return [
+        classNameElement,
+        ...classNameModifierList,
+      ]
+    },
+    headerStyles () {
       const classNameElement = `${CLASS_NAME_PREFIX}__header`
       const classNameModifierList = this.header.classModifierList
         .map((modifier) => `${classNameElement}_${modifier}`)
@@ -110,9 +142,9 @@ export default {
   //@zindex-scrollbar : @zindex-modal - 1;
   @zindex-header : 990;
 
-  @zindex-scrollbar : 999;
+  @zindex-scrollbar : 998;
 
-  .layout-<%= options.name %> .__vuescroll {
+  .layout-default .__vuescroll {
     .__view {
       display: flex;
     }
@@ -126,7 +158,7 @@ export default {
     }
   }
 
-  .layout-<%= options.name %> {
+  .layout-default {
     height: 100vh;
 
     &__header {

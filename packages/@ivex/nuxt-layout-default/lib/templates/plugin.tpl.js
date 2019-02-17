@@ -72,4 +72,8 @@ export default ({ store }, inject) => {
     state,
     mutations
   })
+
+  if (store.$onRegisterModule && typeof store.$onRegisterModule === 'function') {
+    store.$onRegisterModule(`${MODULE_NAMESPACE}/${MODULE_NAME}`)
+  }
 }
