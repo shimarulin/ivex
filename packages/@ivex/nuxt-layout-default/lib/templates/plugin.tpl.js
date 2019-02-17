@@ -62,7 +62,9 @@ const mutations = {
   },
 }
 
-export default ({ store }, inject) => {
+export default (ctx, inject) => {
+  const { store, app } = ctx
+  // console.log(store.$bus)
   // Set namespace
   if (store && !store.state.ivex) {
     store.registerModule(MODULE_NAMESPACE, {
@@ -76,10 +78,8 @@ export default ({ store }, inject) => {
   ], {
     namespaced: true,
     state,
-    mutations
+    mutations,
   })
 
-  if (store.$onRegisterModule && typeof store.$onRegisterModule === 'function') {
-    store.$onRegisterModule(`${MODULE_NAMESPACE}/${MODULE_NAME}`)
-  }
+  store.$bus && store.$bus.$emit('registerModule', `${MODULE_NAMESPACE}/${MODULE_NAME}`)
 }

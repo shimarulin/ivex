@@ -67,6 +67,7 @@ export default {
     _page () { return PAGE },
   },
   mounted: function () {
+    // console.log(this.$nuxt)
     window.addEventListener('keydown', this.handleKeydown)
     window.addEventListener('popstate', this.handlePopstate)
 

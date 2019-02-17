@@ -1,10 +1,14 @@
-const plugin = store => {
-  store.$onRegisterModule = (modulePath) => {
-    let fixedValue = 0
+import Vue from 'vue'
+const vuexEventBusPlugin = store => {
+  store.$bus = new Vue()
+}
 
-    store.commit('@ivex/layout/ADD_HEADER_MODIFIERS', 'fixed')
-
+const vuexOffScreenPlugin = store => {
+  store.$bus.$on('registerModule', modulePath => {
     if (modulePath === '@ivex/layout') {
+      let fixedValue = 0
+
+      store.commit('@ivex/layout/ADD_HEADER_MODIFIERS', 'fixed')
       store.watch(
         (state) => state['@ivex'].layout.scrollTop,
         (newValue, oldValue) => {
@@ -24,9 +28,10 @@ const plugin = store => {
         },
       )
     }
-  }
+  })
 }
 
 export const plugins = [
-  plugin,
+  vuexEventBusPlugin,
+  vuexOffScreenPlugin,
 ]
