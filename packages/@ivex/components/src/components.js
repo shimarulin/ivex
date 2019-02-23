@@ -1,3 +1,5 @@
-export default function components() {
-    // TODO
+import Password from './Password'
+
+export default {
+  Password,
 }
