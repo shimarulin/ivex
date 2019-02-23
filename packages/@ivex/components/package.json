@@ -25,6 +25,9 @@
     "lint": "eslint --ext .js .",
     "test": "yarn lint"
   },
+  "eslintIgnore": [
+    "dist"
+  ],
   "files": [
     "dist",
     "src"
