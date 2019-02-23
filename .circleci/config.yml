@@ -54,6 +54,10 @@ jobs:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
 
+      - run:
+          name: Build packages
+          command: npx lerna run build
+
       - *save_pkg
       - *save_ssh
 
