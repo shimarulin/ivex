@@ -1,0 +1,39 @@
+{
+  "name": "@ivex/components",
+  "version": "0.3.1",
+  "description": "iVex extra components",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/ivex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shimarulin/ivex/issues"
+  },
+  "homepage": "https://github.com/shimarulin/ivex/tree/master/packages/@ivex/components#readme",
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "main": "dist/components.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "module": "dist/components.module.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "nuxt example",
+    "lint": "eslint --ext .js .",
+    "test": "yarn lint"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "vue"
+  ]
+}
