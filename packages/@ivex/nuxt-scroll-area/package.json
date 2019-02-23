@@ -1,6 +1,6 @@
 {
   "name": "@ivex/nuxt-scroll-area",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Vuescroll.js Nuxt module for iVex",
   "license": "MIT",
   "repository": {

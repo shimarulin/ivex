@@ -1,6 +1,6 @@
 {
   "name": "ivex-starter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "iVex starter example",
   "license": "MIT",
   "private": true,
@@ -47,10 +47,10 @@
     }
   },
   "dependencies": {
-    "@ivex/nuxt-scroll-area": "^0.3.0"
+    "@ivex/nuxt-scroll-area": "^0.4.0"
   },
   "devDependencies": {
-    "@ivex/eslint-config-vue": "^0.3.0",
+    "@ivex/eslint-config-vue": "^0.4.0",
     "@nuxtjs/dotenv": "^1.3.0",
     "eslint": "^5.12.1",
     "husky": "^1.3.1",
