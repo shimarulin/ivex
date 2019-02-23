@@ -56,7 +56,7 @@ jobs:
 
       - run:
           name: Build packages
-          command: lerna run build
+          command: npx lerna run build
 
       - *save_pkg
       - *save_ssh
