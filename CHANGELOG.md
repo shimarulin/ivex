@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/shimarulin/ivex/compare/v0.4.1...v0.4.2) (2019-02-23)
+
+
+### Bug Fixes
+
+* **components:** move vue-runtime-helpers to dependencies ([a0ebb2b](https://github.com/shimarulin/ivex/commit/a0ebb2b))
+
+
+
+
+
 ## [0.4.1](https://github.com/shimarulin/ivex/compare/v0.4.0...v0.4.1) (2019-02-23)
 
 
