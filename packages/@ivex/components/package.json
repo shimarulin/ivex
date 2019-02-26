@@ -40,12 +40,12 @@
     "vue"
   ],
   "dependencies": {
-    "vue": "^2.5.22",
+    "vue": "^2.6.7",
     "vue-runtime-helpers": "^1.0.0"
   },
   "devDependencies": {
-    "bili": "^4.3.2",
+    "bili": "^4.4.0",
     "rollup-plugin-vue": "^4.7.2",
-    "vue-template-compiler": "^2.5.22"
+    "vue-template-compiler": "^2.6.7"
   }
 }
