@@ -40,6 +40,6 @@
   ],
   "dependencies": {
     "lodash": "^4.17.11",
-    "vuescroll": "^4.9.6"
+    "vuescroll": "^4.10.5"
   }
 }

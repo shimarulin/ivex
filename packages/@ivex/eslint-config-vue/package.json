@@ -30,6 +30,6 @@
     "vue"
   ],
   "dependencies": {
-    "@platr/eslint-config-vue": "^0.1.2"
+    "@platr/eslint-config-vue": "^0.1.3"
   }
 }
