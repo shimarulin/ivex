@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/shimarulin/ivex/compare/v0.4.2...v0.4.3) (2019-02-26)
+
+
+### Bug Fixes
+
+* upgrade packages ([1d3af03](https://github.com/shimarulin/ivex/commit/1d3af03))
+
+
+
+
+
 ## [0.4.2](https://github.com/shimarulin/ivex/compare/v0.4.1...v0.4.2) (2019-02-23)
 
 
